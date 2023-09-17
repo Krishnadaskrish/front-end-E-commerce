@@ -22,6 +22,7 @@ export default function Cart() {
 
   const handleBackToShopping = () => {
     navigate("/");
+    
   };
 
   const removeItem = (itemId) => {
