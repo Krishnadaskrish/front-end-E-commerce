@@ -18,10 +18,7 @@ import {
     const { product, cart, setcart }=useContext(MyContext);
     const[count,setcount]=useState(1);
     const navigate=useNavigate();
-
-   //filter product matches id para
-   
-   const viewProduct=product.filter((product)=>product.id===parseInt(id));
+  const viewProduct=product.filter((product)=>product.id===parseInt(id));
 
    if(!viewProduct){
     //product is found
@@ -39,23 +36,24 @@ import {
     
    
     const handleAddToCart=()=>{
-        //check product is already in cart
-        if (cart.includes(viewProduct[0])){
-            alert('product i sadded to cart');
-        }
-        else{//add select product to the cart
+  console.log(cart);
+      let cartItem = cart.filter(item => item?.id == id)[0];
+      const itemIndex=cart.findIndex(i => i?.id == id)
+      console.log(cartItem, itemIndex);
+      if(cartItem) {
+      cart.splice(itemIndex, 1, {...cartItem, count: cartItem?.count + count});
+      } else {
+      cart.push({...viewProduct[0], count: viewProduct[0]?.count + count});
+      }
+      setcart(() =>[...cart]);
 
-          setcart(()=>[...cart,...viewProduct])
-            console.log(cart);
-            alert('produvt successfully added to the cart')
-        }
-
+        alert('product successfully added to the cart')
         navigate('/Cart')
 
         };
         const handleBuyNow = () => {
             navigate('/Cart');
-          };
+      };
 
           
         return (
