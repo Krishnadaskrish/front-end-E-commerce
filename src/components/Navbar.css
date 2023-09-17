@@ -1,0 +1,54 @@
+/* Navbar.css */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .show-menu .menu-toggle {
+    display: flex;
+  }
+  
+  .show-menu .search-bar {
+    display: none;
+  }
+
+
+  
