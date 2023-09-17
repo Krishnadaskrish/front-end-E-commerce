@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+
 
 import {
   MDBBtn,
@@ -18,6 +19,8 @@ function Login() {
   const[username,setUsername] = useState('');
   const[password,setPassword] = useState('');
   const [isLoggedin, setIsLoggedin] = useState(false);
+  
+
 
   const navigate = useNavigate();
 
@@ -34,11 +37,12 @@ function Login() {
     // Check if the user exists in local storage
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
     const user = existingUsers.find((u) => u.username === username && u.password === password);
-
+    console.log(user);
     if (user) {
       // Set a flag in local storage to indicate the user is logged in
-      localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('loggedIn', JSON.stringify(user));
       alert('Login successful!');
+      
 
       navigate('/');
     } else {

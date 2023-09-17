@@ -54,7 +54,7 @@ const All = () => {
                       onClick={() => navigate(`/displayProduct/${product.id}`)}
                       type="submit"
                     >
-                      Add to cart <i className="fas fa-shopping-cart ms-1"></i>
+                      View Details <i className="fas fa-shopping-cart ms-1"></i>
                     </Button>
                   </div>
                 </div>

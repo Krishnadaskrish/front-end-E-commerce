@@ -17,7 +17,7 @@
   .bar {
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: #111111;
     margin: 3px 0;
   }
   
@@ -33,8 +33,7 @@
   }
   
   button {
-    background-color: #007bff;
-    color: #fff;
+    color: #0c0b0b;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
@@ -48,6 +47,27 @@
   
   .show-menu .search-bar {
     display: none;
+  }
+
+  .badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 12px;
+      background: #ff0000;
+      color: #ffffff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
   }
 
 

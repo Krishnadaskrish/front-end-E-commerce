@@ -1,4 +1,5 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
+import { MyContext } from '../context/Context';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -7,6 +8,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Search from './Search';
 // import { product } from '../Products/Product';
+import './Navbar.css'
+
 
 
 import { MDBBtn} from 'mdb-react-ui-kit';
@@ -23,30 +26,44 @@ function Navbarfront() {
   const [userName, setUserName] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Track user's login status
   const location = useLocation();
+  const cart = useContext(MyContext);
+console.log(cart);
+  useEffect(()=>{
+
+
+console.log('cart')
+
+  },[cart])
 
   useEffect(() => {
     // Check if the user is logged in when the component mounts
-    const loggedIn = localStorage.getItem("loggedIn") === "true";
-    setIsLoggedIn(loggedIn);
-  }, []);
-
-  useEffect(() => {
-    // get User name from local storage
-    const userss = JSON.parse(localStorage.getItem("users"));
-    console.log("useEffect for userName is running");
-    if (userss && userss.length > 0) {
-      setUserName(userss[0].username);
+    const user = JSON.parse(localStorage.getItem("loggedIn"));
+    console.log(user);
+    setIsLoggedIn(!!user?.username);
+    if (user) {
+      setUserName(user?.username);
     } else {
       setUserName("");
     }
-  }, []);
+  });
+
+  // useEffect(() => {
+  //   // get User name from local storage
+  //   const userss = JSON.parse(localStorage.getItem("users"));
+  //   console.log("useEffect for userName is running");
+  //   if (userss && userss.length > 0) {
+  //     setUserName(userss[0].username);
+  //   } else {
+  //     setUserName("");
+  //   }
+  // }, []);
   
 
-  // console.log(userName);
-  useEffect(() => {
-    // When the route changes, re-render the Navbar component to update the UI
-    setIsLoggedIn(localStorage.getItem("loggedIn") === "true");
-  }, [location.pathname]); // Listen for changes in the route path
+  // // console.log(userName);
+  // useEffect(() => {
+  //   // When the route changes, re-render the Navbar component to update the UI
+  //   setIsLoggedIn(localStorage.getItem("loggedIn") === "true");
+  // }, [location.pathname]); // Listen for changes in the route path
 
   const handleLogout = () => {
     // Clear the logged-in flag in localStorage and update the state
@@ -114,7 +131,11 @@ function Navbarfront() {
                   ""
                 )}
               </li>
+              <div>
+              <i class="fa" style={{fontSize:'24px', color: 'black'}}>&#xf07a;</i>
+<span class='badge badge-warning' id='lblCartCount'> 5 </span>
 
+              </div>
         </Navbar.Collapse>
       </Container>
    
