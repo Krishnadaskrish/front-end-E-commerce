@@ -28,6 +28,9 @@ import Cart from './components/Cart';
 function App() {
 
   const[cart,setcart]=useState([])
+  const[pro,setpro]=useState(product)
+
+  
 
   
  
@@ -35,7 +38,7 @@ function App() {
     <>
     
      <Navbarfront/>
-     <MyContext.Provider value={{product,cart,setcart}}>
+     <MyContext.Provider value={{cart,setcart,pro}}>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/log' element={<Login/>}/>

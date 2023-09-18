@@ -7,16 +7,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Search from './Search';
-// import { product } from '../Products/Product';
 import './Navbar.css'
-
-
-
 import { MDBBtn} from 'mdb-react-ui-kit';
-
 import { Link } from 'react-router-dom';
-import Login from './Login';
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 
 
@@ -25,9 +19,10 @@ function Navbarfront() {
   const [searchTerm, setsearchTerm] = useState("");
   const [userName, setUserName] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Track user's login status
-  const location = useLocation();
+  
   const cart = useContext(MyContext);
 console.log(cart);
+
   useEffect(()=>{
 
 
@@ -47,23 +42,7 @@ console.log('cart')
     }
   });
 
-  // useEffect(() => {
-  //   // get User name from local storage
-  //   const userss = JSON.parse(localStorage.getItem("users"));
-  //   console.log("useEffect for userName is running");
-  //   if (userss && userss.length > 0) {
-  //     setUserName(userss[0].username);
-  //   } else {
-  //     setUserName("");
-  //   }
-  // }, []);
-  
-
-  // // console.log(userName);
-  // useEffect(() => {
-  //   // When the route changes, re-render the Navbar component to update the UI
-  //   setIsLoggedIn(localStorage.getItem("loggedIn") === "true");
-  // }, [location.pathname]); // Listen for changes in the route path
+ 
 
   const handleLogout = () => {
     // Clear the logged-in flag in localStorage and update the state
@@ -80,23 +59,13 @@ console.log('cart')
     navigate("/log");
   };
 
-
-
-
-
-
-
-  const onSearch =(e)=>{
+ const onSearch =(e)=>{
     e.preventDefault();
   
     navigate=('/search');
   }
   
 
-  
-  
-  
-    
   return (
     <>
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -115,8 +84,6 @@ console.log('cart')
      
           </Nav>
           
-          
-
           {isLoggedIn ? (
        <MDBBtn onClick={handleLogout}>LOgout</MDBBtn>):(<MDBBtn onClick={handleLogIn}>login</MDBBtn>)}
 <img src={require("../images/user(1).png")} alt="" className="navIcons" />
@@ -148,22 +115,12 @@ console.log('cart')
               onChange={(e) => setsearchTerm(e.target.value)}
               
             />    
-            
-
-            
             </Form>
             </Navbar>
             <Search searchTerm={searchTerm} />
-
-
-      
-     
 </>
 
-
-    
-  );
-}
+)}
 
 export default Navbarfront;
 

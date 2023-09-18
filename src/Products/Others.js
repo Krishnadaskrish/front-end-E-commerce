@@ -6,8 +6,8 @@ import { Card } from 'react-bootstrap';
 
 const Others = () => {
   const navigate = useNavigate();
-  const { product } = useContext(MyContext);
-  const filteredProducts = product.filter((p) => p.type.toLowerCase() === 'other');
+  const { pro } = useContext(MyContext);
+  const filteredProducts = pro.filter((p) => p.type.toLowerCase() === 'other');
 
   return (
     <div>
@@ -18,17 +18,17 @@ const Others = () => {
       <div className='container py-5'>
         <div className='row'>
           <div className='d-flex flex-wrap justify-content-center '>
-            {filteredProducts.map((product) => (
+            {filteredProducts.map((pro) => (
               <Card
-                key={product.id}
+                key={pro.id}
                 style={{ width: '20%', marginBottom: '10px', marginRight: '10px' }}
-                onClick={() => navigate(`/displayProduct/${product.id}`)}
+                onClick={() => navigate(`/displayProduct/${pro.id}`)}
                 className='card-container'
               >
-                <Card.Img className='card-img-top' src={product.src} />
+                <Card.Img className='card-img-top' src={pro.src} />
                 <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>{product.price}</Card.Text>
+                  <Card.Title>{pro.name}</Card.Title>
+                  <Card.Text>{pro.price}</Card.Text>
                 </Card.Body>
               </Card>
             ))}

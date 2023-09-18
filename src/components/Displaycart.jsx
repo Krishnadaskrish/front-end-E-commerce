@@ -15,10 +15,10 @@ import {
 
   export default function Displaycart(){
     const {id}=useParams()
-    const { product, cart, setcart }=useContext(MyContext);
+    const { pro, cart, setcart }=useContext(MyContext);
     const[count,setcount]=useState(1);
     const navigate=useNavigate();
-  const viewProduct=product.filter((product)=>product.id===parseInt(id));
+  const viewProduct=pro.filter((pro)=>pro.id===parseInt(id));
 
    if(!viewProduct){
     //product is found
