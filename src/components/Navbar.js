@@ -18,23 +18,20 @@ function Navbarfront() {
   const navigate = useNavigate();
   const [searchTerm, setsearchTerm] = useState("");
   const [userName, setUserName] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track user's login status
   
-  const cart = useContext(MyContext);
-console.log(cart);
+  
+  const {cart,isLog, setIsLog} = useContext(MyContext);
+
 
   useEffect(()=>{
-
-
-console.log('cart')
 
   },[cart])
 
   useEffect(() => {
-    // Check if the user is logged in when the component mounts
+    
     const user = JSON.parse(localStorage.getItem("loggedIn"));
-    console.log(user);
-    setIsLoggedIn(!!user?.username);
+   
+    setIsLog(!!user?.username);
     if (user) {
       setUserName(user?.username);
     } else {
@@ -45,30 +42,25 @@ console.log('cart')
  
 
   const handleLogout = () => {
-    // Clear the logged-in flag in localStorage and update the state
+    
     localStorage.removeItem("loggedIn");
     alert('Logout successful!');
-    
-    
-    setIsLoggedIn(false);
+    setIsLog(false);
   };
 
   const handleLogIn = () => {
-    // Clear the logged-in flag in localStorage and update the state
-    
     navigate("/log");
   };
 
  const onSearch =(e)=>{
     e.preventDefault();
-  
     navigate=('/search');
   }
   
 
   return (
     <>
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="navbarbg">
       <Container fluid>
         <Navbar.Brand href="#">Babees</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -84,12 +76,12 @@ console.log('cart')
      
           </Nav>
           
-          {isLoggedIn ? (
+          {isLog ? (
        <MDBBtn onClick={handleLogout}>LOgout</MDBBtn>):(<MDBBtn onClick={handleLogIn}>login</MDBBtn>)}
 <img src={require("../images/user(1).png")} alt="" className="navIcons" />
               <li class="nav-item">
                 
-              {isLoggedIn ? (
+              {isLog ? (
                 
                   <Link to="/" class="nav-link navBTNLINK">
                   {userName}
@@ -99,8 +91,8 @@ console.log('cart')
                 )}
               </li>
               <div>
-              <i class="fa" style={{fontSize:'24px', color: 'black'}}>&#xf07a;</i>
-<span class='badge badge-warning' id='lblCartCount'> 5 </span>
+              <i class="fa" style={{fontSize:'24px', color: 'black'}} onClick={() => navigate('/cart')}>&#xf07a;</i>
+<span class='badge badge-warning' id='lblCartCount'> 1 </span>
 
               </div>
         </Navbar.Collapse>

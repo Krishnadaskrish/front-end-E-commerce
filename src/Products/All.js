@@ -2,14 +2,21 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../context/Context";
 import { Button } from "react-bootstrap";
+import Navbarfront from "../components/Navbar";
+import Footer from '../components/Footer';
 
 const All = () => {
-  const { pro } = useContext(MyContext);
+  const { pro,setpro } = useContext(MyContext);
   const navigate = useNavigate();
 
   return (
+    
+ 
     <>
-      <section id="all" style={{ backgroundColor: " #FFFFA7" }}>
+    
+    
+   
+      <section id="all" style={{ backgroundColor: "#f4c430" }}>
         <div className="container py-5">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
             {pro.map((pro, i) => (
@@ -63,6 +70,7 @@ const All = () => {
           </div>
         </div>
       </section>
+      
     </>
   );
 };

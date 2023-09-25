@@ -1,4 +1,4 @@
-import React,{useContext,useState} from "react";
+import React,{useContext,useState,useEffect} from "react";
 import { useNavigate,useParams } from "react-router";
 import { MyContext } from "../context/Context";
 import {
@@ -11,13 +11,26 @@ import {
     MDBRow,
     MDBCol,
   } from "mdb-react-ui-kit";
+  import Navbarfront from "./Navbar";
 
 
   export default function Displaycart(){
     const {id}=useParams()
-    const { pro, cart, setcart }=useContext(MyContext);
+    const { pro, cart, setcart,isLog, setIsLog }=useContext(MyContext);
     const[count,setcount]=useState(1);
     const navigate=useNavigate();
+
+
+  useEffect(() => {
+    // Check if the user is logged in when the component mounts
+    const loggedIn = localStorage.getItem("loggedIn") === "true";
+    setIsLog(loggedIn);
+  }, []);
+
+
+
+
+
   const viewProduct=pro.filter((pro)=>pro.id===parseInt(id));
 
    if(!viewProduct){
@@ -32,7 +45,9 @@ import {
         if (count > 1) {
             setcount(count - 1);
         }
+
       };
+
     
    
     const handleAddToCart=()=>{
@@ -57,7 +72,11 @@ import {
 
           
         return (
-    <div className="container mt-5">
+          <>
+
+          <Navbarfront/>
+          <div style={{ backgroundColor: " #ffff" }}>
+    <div className="container mt-5"   >
            {viewProduct.map((item) => (
             
       <MDBRow key={item.id}>
@@ -87,9 +106,10 @@ import {
                 <strong>Total:</strong> ₹{item.price*count}
               </p>
 
-              <MDBBtn className="mx-2" color="primary" onClick={handleAddToCart}>
-                Add to Cart
-              </MDBBtn>
+              {isLog===true?(
+            <button onClick={handleAddToCart} >add to cart</button>)
+           : (<button onClick={()=>{navigate('/log')}} >add to cart</button>)
+            }
               <MDBBtn color="success" onClick={handleBuyNow}>
                 Buy Now
               </MDBBtn>
@@ -101,18 +121,12 @@ import {
       </MDBRow>
            ))}
     </div>
+ </div>
+ </>
   );
 
         
-        
-
-
-        
-
-
-
-
-    } 
+   } 
 
 
 

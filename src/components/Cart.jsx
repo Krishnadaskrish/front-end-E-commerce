@@ -13,7 +13,7 @@ import {
 } from "mdb-react-ui-kit";
 import { MyContext } from "../context/Context";
 import { useNavigate } from "react-router-dom";
-import { maxHeight } from "@mui/system";
+import Navbarfront from "./Navbar";
 
 export default function Cart() {
   const { cart, setcart } = useContext(MyContext);
@@ -38,7 +38,7 @@ export default function Cart() {
     cart.splice(itemIndex, 1, {...cartItem, count: cartItem?.count+1});
     setcart(() =>[...cart]);
     }
-    // setCount(count + 1);
+   
   };
 
   const decreaseCount = (itemId = null) => {
@@ -71,7 +71,9 @@ export default function Cart() {
 
 
   return (
-    <section className="h-100 h-custom" style={{ backgroundColor: "#eee", maxHeight: "50%" }}>
+    <>
+    <Navbarfront/>
+    <section className="h-100 h-custom" style={{ backgroundColor: "#ffff", maxHeight: "50%" }}>
       <MDBContainer className="h-100 py-5">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol>
@@ -245,6 +247,7 @@ export default function Cart() {
         </MDBRow>
       </MDBContainer>
     </section>
+    </>
   );
 }
 

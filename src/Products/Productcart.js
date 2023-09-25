@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbarfront from "../components/Navbar";
+import Footer from '../components/Footer';
 const Card = ({ imageSrc, title }) => {
   
   return (
+   
     <div className="card"  >
       <img src={imageSrc} className="card-img-top" alt={title} />
       <div className="card-body">
@@ -16,23 +19,29 @@ const Card = ({ imageSrc, title }) => {
 const Productcart = () => {
   const ab=useNavigate()
   return (
-    <div style={{ backgroundColor: " #FFFFA7" }}>
+    <>
+    
+   
+    <div style={{ backgroundColor: " #f4c430" }}>
     <div className="container" id='cat'  >
+      <br/>
+      <br/>
     <h2>PRODUCT CATEGORY</h2>
     <br></br>
       <div className="row" >
         <div className="col-md-3">
           <div className="card-container" onClick={()=>ab('/cloth')}>
             <Card 
-              imageSrc="https://cdn.shopify.com/s/files/1/1993/5303/t/17/assets/baby_girl_x800-1679596251768.jpeg?v=1679596252"
+              imageSrc= "https://i.pinimg.com/736x/1d/1b/87/1d1b87733d3234d241e89a1a016c22e6.jpg "
               title="Clothing"
+              
             />
           </div>
         </div>
         <div className="col-md-3">
           <div className="card-container" onClick={()=>ab('/toy')}>
             <Card
-              imageSrc="https://5.imimg.com/data5/ANDROID/Default/2021/4/FU/CO/OA/111795961/product-jpeg-500x500.jpg"
+              imageSrc="https://i.pinimg.com/1200x/5c/6c/a6/5c6ca69f01924071d8600cb04744830b.jpg"
               title="Toys"
             />
           </div>
@@ -60,6 +69,8 @@ const Productcart = () => {
       </div>
     </div>
     </div>
+  
+    </>
   );
 };
 

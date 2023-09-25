@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MyContext } from '../context/Context';
 import { Card } from 'react-bootstrap';
+import Navbarfront from '../components/Navbar';
 
 
 const Toy = () => {
@@ -10,6 +11,8 @@ const Toy = () => {
   const filteredProducts = pro.filter((p) => p.type.toLowerCase() === 'toy');
 
   return (
+    <>
+    <Navbarfront/>
     <div>
       <header className='sticky-top'>
         
@@ -37,6 +40,7 @@ const Toy = () => {
       </div>
       
     </div>
+    </>
   );
 };
 
