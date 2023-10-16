@@ -19,10 +19,17 @@ export default function Cart() {
   const { cart, setcart } = useContext(MyContext);
   const navigate = useNavigate();
   const [total,setTotal]=useState(0)
+  
 
   const handleBackToShopping = () => {
     navigate("/");
   };
+
+
+  
+
+
+
 
   const removeItem = (itemId) => {
     const updatedCart = cart.filter((item) => item.id !== itemId);

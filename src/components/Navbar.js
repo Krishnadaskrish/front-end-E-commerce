@@ -60,9 +60,9 @@ function Navbarfront() {
 
   return (
     <>
-    <Navbar expand="lg" className="navbarbg">
+    <Navbar expand="lg" className="navbarbg" style={{ backgroundColor: "  #003153" ,color:'#ffff' }}>
       <Container fluid>
-        <Navbar.Brand href="#">Babees</Navbar.Brand>
+        <Navbar.Brand href="#" style={{ backgroundColor: "  #003153" ,color:'#ffff' }}>Babees</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -70,14 +70,18 @@ function Navbarfront() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-           <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
-           <Nav.Link  onClick={() => navigate('/product')}>Category</Nav.Link>
-           <Nav.Link  onClick={() => navigate('/All')}>All Product</Nav.Link>
+           <Nav.Link onClick={() => navigate('/')} style={{ backgroundColor: "  #003153" ,color:'#ffff' }}>Home</Nav.Link>
+           <Nav.Link  onClick={() => navigate('/product')} style={{ backgroundColor: "  #003153" ,color:'#ffff' }}>Category</Nav.Link>
+           <Nav.Link  onClick={() => navigate('/All')} style={{ backgroundColor: "  #003153" ,color:'#ffff' }}>All Product</Nav.Link>
      
           </Nav>
           
           {isLog ? (
-       <MDBBtn onClick={handleLogout}>LOgout</MDBBtn>):(<MDBBtn onClick={handleLogIn}>login</MDBBtn>)}
+       <MDBBtn onClick={handleLogout}   
+      //  rippleColor="success"
+       color="danger"
+       
+       type="button">LOgout</MDBBtn>):(<MDBBtn onClick={handleLogIn} color="success">login</MDBBtn>)}
 <img src={require("../images/user(1).png")} alt="" className="navIcons" />
               <li class="nav-item">
                 
@@ -91,7 +95,7 @@ function Navbarfront() {
                 )}
               </li>
               <div>
-              <i class="fa" style={{fontSize:'24px', color: 'black'}} onClick={() => navigate('/cart')}>&#xf07a;</i>
+              <i class="fa" style={{fontSize:'24px', color: 'white'}} onClick={() => navigate('/cart')}>&#xf07a;</i>
 <span class='badge badge-warning' id='lblCartCount'> 1 </span>
 
               </div>

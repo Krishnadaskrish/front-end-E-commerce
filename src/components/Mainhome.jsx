@@ -7,7 +7,7 @@ function DarkVariantExample() {
         <img
           className="d-block w-100"
           
-          src="https://img.freepik.com/premium-photo/studio-portrait-lovely-baby-wearing-summer-dress-large-yellow-bow-her-head-against-gray-backdrop-with-room-text_176841-22624.jpg?w=1380"
+          src="https://theayurvedaco.com/cdn/shop/files/Baby_Care_Banner_copy.jpg?v=1680953662&width=1800"
           alt="First slide"
        
           
@@ -21,7 +21,7 @@ function DarkVariantExample() {
         <img
           className="d-block w-100"
          
-          src='https://media.istockphoto.com/id/1203988587/photo/accessories-for-newborns-on-a-yellow-background-selective-focus.jpg?s=170667a&w=0&k=20&c=pOll8HIHkuv5TePE2OxHPj-zEy94JrVYEi0_MJMNr3c='
+          src='https://www.mommypure.com/cdn/shop/collections/Category_Banner-_Combos.jpg'
           alt="Second slide"
         />
         <Carousel.Caption>
@@ -32,7 +32,7 @@ function DarkVariantExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://img.freepik.com/premium-photo/newborn-yellow-background_905829-4486.jpg?w=1380"
+          src="https://theayurvedaco.com/cdn/shop/files/Baby_Care_Banner_copy.jpg?v=1680953662&width=1800"
           alt="Third slide"
         />
         <Carousel.Caption>

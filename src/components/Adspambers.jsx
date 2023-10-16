@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbarfront from "../components/Navbar";
 import Footer from '../components/Footer';
+import { MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
+
 const Card = ({ imageSrc, title }) => {
   
   return (
@@ -10,14 +12,14 @@ const Card = ({ imageSrc, title }) => {
       <img src={imageSrc} className="card-img-top" alt={title} />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">Some text describing the category...</p>
+        
       </div>
     </div>
   );
 };
 
-const Productcart = () => {
-  const ab=useNavigate()
+const Adspambers = () => {
+ 
   return (
     <>
     
@@ -30,19 +32,19 @@ const Productcart = () => {
     <br></br>
       <div className="row" >
         <div className="col-md-3">
-          <div className="card-container" onClick={()=>ab('/cloth')}>
+          <div className="card-container" >
             <Card 
-              imageSrc= "https://thetrendytoddlers.com/cdn/shop/products/Mama_sCoffeCupBoys.jpg?v=1682526194"
-              title="Clothing"
+              imageSrc= "https://i.pinimg.com/564x/97/90/e8/9790e861fdd8c4bef88a8f6c201dd599.jpg"
+             
               
             />
           </div>
         </div>
         <div className="col-md-3">
-          <div className="card-container" onClick={()=>ab('/toy')} >
+          <div className="card-container"  >
             <Card 
-              imageSrc="https://5.imimg.com/data5/ANDROID/Default/2021/4/FU/CO/OA/111795961/product-jpeg-500x500.jpg"
-              title="Toys"
+              imageSrc="https://i.pinimg.com/564x/60/e5/1a/60e51a9e72542523eda296b906dd7677.jpg"
+              
               
             />
           </div>
@@ -52,27 +54,38 @@ const Productcart = () => {
 
 
         <div className="col-md-3">
-          <div className="card-container"  onClick={()=>ab('/card')}>
+          <div className="card-container"  >
             <Card
-              imageSrc="https://staranddaisy.in/wp-content/uploads/2022/09/spoonultrasoft_19.png"
-              title="Feeding"
+              imageSrc="https://i.pinimg.com/564x/40/ae/c3/40aec3726b884065938ce8204bfdcdd9.jpg"
+             
             />
           </div>
         </div>
         <div className="col-md-3">
-          <div className="card-container"  onClick={()=>ab('/others')}>
+          <div className="card-container"  >
             <Card
-              imageSrc="https://img.freepik.com/free-photo/beauty-concept-with-basket_23-2147817623.jpg"
-              title="Daily Care"
+              imageSrc="https://i.pinimg.com/564x/d3/fa/0a/d3fa0a443c3968ee00071388b884143e.jpg"
+              
             />
           </div>
         </div>
       </div>
     </div>
+         
+
+
+
+ 
+    <MDBTypography note noteColor='primary'>
+        <strong>Note success:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum doloremque
+        officia laboriosam. Itaque ex obcaecati architecto! Qui necessitatibus delectus placeat illo rem id nisi
+        consequatur esse, sint perspiciatis soluta porro?
+      </MDBTypography>
+ 
     </div>
   
     </>
   );
 };
 
-export default Productcart;
+export default Adspambers;

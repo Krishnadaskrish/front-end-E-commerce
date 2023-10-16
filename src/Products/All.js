@@ -13,10 +13,11 @@ const All = () => {
     
  
     <>
+    <Navbarfront/>
     
     
    
-      <section id="all" style={{ backgroundColor: "#f4c430" }}>
+      <section id="all" style={{ backgroundColor: "#faf3dd" }}>
         <div className="container py-5">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
             {pro.map((pro, i) => (
