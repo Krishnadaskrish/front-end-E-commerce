@@ -77,9 +77,9 @@ const Adspambers = () => {
 
  
     <MDBTypography note noteColor='primary'>
-        <strong>Note success:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum doloremque
-        officia laboriosam. Itaque ex obcaecati architecto! Qui necessitatibus delectus placeat illo rem id nisi
-        consequatur esse, sint perspiciatis soluta porro?
+        <strong>Note success:</strong> Baby diapers are a type of absorbent underwear designed to help keep babies and infants dry and comfortable. They are a crucial part of baby care, especially during the early months and years of a child's life. Here are some key points about baby diapers:
+        
+        
       </MDBTypography>
  
     </div>
