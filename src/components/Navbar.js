@@ -78,11 +78,11 @@ function Navbarfront() {
           
           {isLog ? (
        <MDBBtn onClick={handleLogout}   
-      //  rippleColor="success"
-       color="danger"
+      
+       style={{background:'#6CA0DC',color:'#003153'}}
        
-       type="button">LOgout</MDBBtn>):(<MDBBtn onClick={handleLogIn} color="success">login</MDBBtn>)}
-<img src={require("../images/user(1).png")} alt="" className="navIcons" />
+       type="button">LOgout</MDBBtn>):(<MDBBtn onClick={handleLogIn}  style={{background:'#6CA0DC',color:'#003153'}} >login</MDBBtn>)}
+<img src={require("../images/user(4).png")} alt="" className="navIcons" />
               <li class="nav-item">
                 
               {isLog ? (
@@ -95,7 +95,7 @@ function Navbarfront() {
                 )}
               </li>
               <div>
-              <i class="fa" style={{fontSize:'24px', color: 'white'}} onClick={() => navigate('/cart')}>&#xf07a;</i>
+              <i class="fa" style={{fontSize:'24px', color: '#6CA0DC'}} onClick={() => navigate('/cart')}>&#xf07a;</i>
 <span class='badge badge-warning' id='lblCartCount'> 1 </span>
 
               </div>

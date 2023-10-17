@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import { MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 
 const Card = ({ imageSrc, title }) => {
-  
+
   return (
    
     <div className="card"  >
@@ -28,7 +28,7 @@ const Adspambers = () => {
     <div className="container" id='cat'  >
       <br/>
       <br/>
-    <h2>PRODUCT CATEGORY</h2>
+    <h2>Baby Diapers</h2>
     <br></br>
       <div className="row" >
         <div className="col-md-3">

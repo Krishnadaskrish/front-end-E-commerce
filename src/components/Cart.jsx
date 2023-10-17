@@ -130,16 +130,16 @@ export default function Cart() {
                             </p>
 
                             <div className="def-number-input number-input safari_only">
-                              <button
+                              <MDBBtn
                                 style={{ border: "1px" }}
                                 className="minus mx-2 "
                                 onClick={() => decreaseCount(item.id)}
                               >
                                 {" "}
                                 -
-                              </button>
+                              </MDBBtn>
                               <span>{item?.count} </span>
-                              <button
+                              <MDBBtn
                                 className="plus"
                                 style={{ border: "1px" }}
                                 onClick={() => {
@@ -148,7 +148,7 @@ export default function Cart() {
                                 }
                               >
                                 +
-                              </button>
+                              </MDBBtn>
                             </div>
                           </div>
                           <MDBTypography tag="h5" className="fw-bold  mx-5">

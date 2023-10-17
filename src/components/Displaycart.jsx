@@ -107,9 +107,11 @@ import {
               </p>
 
               {isLog===true?(
-            <button onClick={handleAddToCart} >add to cart</button>)
-           : (<button onClick={()=>{navigate('/log')}} >add to cart</button>)
+            <MDBBtn onClick={handleAddToCart} >add to cart</MDBBtn>)
+           : (<MDBBtn onClick={()=>{navigate('/log')}} >add to cart</MDBBtn>)
             }
+            <br/>
+            <br/>
               <MDBBtn color="success" onClick={handleBuyNow}>
                 Buy Now
               </MDBBtn>
