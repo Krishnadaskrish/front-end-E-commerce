@@ -75,7 +75,7 @@ import {
           <>
 
           <Navbarfront/>
-          <div style={{ backgroundColor: " #ffff" }}>
+          <div style={{ backgroundColor: " #C6E6FB" }}>
     <div className="container mt-5"   >
            {viewProduct.map((item) => (
             

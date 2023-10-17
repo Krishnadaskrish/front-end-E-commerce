@@ -80,7 +80,7 @@ export default function Cart() {
   return (
     <>
     <Navbarfront/>
-    <section className="h-100 h-custom" style={{ backgroundColor: "#ffff", maxHeight: "50%" }}>
+    <section className="h-100 h-custom" style={{ backgroundColor: "#C6E6FB", maxHeight: "50%" }}>
       <MDBContainer className="h-100 py-5">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol>
