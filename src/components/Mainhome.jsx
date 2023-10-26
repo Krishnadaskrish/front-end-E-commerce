@@ -25,7 +25,7 @@ function DarkVariantExample() {
         />
         <Carousel.Caption>
           <h5>Babees</h5>
-          <p>"We've Got Your Baby Needs Covered - Shop Now!.</p>
+         
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
